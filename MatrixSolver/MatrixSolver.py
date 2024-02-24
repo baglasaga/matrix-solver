@@ -9,7 +9,7 @@ def buildMatrix():
 
 # uses Gaussian elimination method to row reduce entire matrix
 def rowReduce(matrix):
-
+    # matrix = matrix.astype(np.float64); TODO: work in progress work for fractions
     currentRow = 0;
     try:
         numCols = matrix.shape[1];
@@ -20,7 +20,7 @@ def rowReduce(matrix):
         if nonzero != None:
             swapRows(matrix, currentRow, nonzero);
             setPivotToOne(matrix, currentRow, col);
-            eliminateBelow(matrix, currentRow, col);
+            eliminateAboveBelow(matrix, currentRow, col);
             currentRow += 1;
     return matrix;
 
@@ -53,15 +53,12 @@ def setPivotToOne(matrix, pivot, col):
 #         col: integer representing current column being reduced
 # MODIFIES: matrix
 # EFFECTS: sets all elements below matrix[pivot, col] to 0
-# TODO: modify so that this eliminates above as well 
-def eliminateBelow(matrix, pivot, col):
+def eliminateAboveBelow(matrix, pivot, col):
     numRows = matrix.shape[0];
-    for row in range(0, pivot - 1):
-        factor = matrix[row, col];
-        matrix[row] -= factor * matrix[pivot];
-    for row in range(pivot + 1, numRows):
-        factor = matrix[row, col];
-        matrix[row] -= factor * matrix[pivot];
+    for row in range(0, numRows): 
+        if row != pivot:
+            factor = matrix[row, col];
+            matrix[row] -= factor * matrix[pivot];
 
 
 

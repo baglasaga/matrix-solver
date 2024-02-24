@@ -62,8 +62,8 @@ matrix_alreadySolved = np.array([[1, 0, 0],
                                  [0, 0, 1]]);
 
 matrix_3x4 = np.array([[4, 1, 2, 0], 
-                      [3, 1, 5, 0], 
-                      [17, 2, 1, 2]]);
+                       [3, 1, 5, 0], 
+                       [17, 2, 1, 2]]);
 matrix_3x4Solved = np.array([[1, 0, 0, 1/4], 
                             [0, 1, 0, -7/6], 
                             [0, 0, 1, 1/12]]);
@@ -81,16 +81,16 @@ matrix_4x3Solved = np.array([[1, 0, 0],
 matrix_zeroInMiddle = np.array([[1, 2, 3],
                                [2, 4, 6],
                                [3, 2, 1]]);
-matrix_zeroInMiddleSolved = np.array([[1, 0, 0],
-                                     [0, 1, 0],
+matrix_zeroInMiddleSolved = np.array([[1, 0, -1],
+                                     [0, 1, 2],
                                      [0, 0, 0]]);
 
 matrix_multipleZeroesInMiddle = np.array([[1, 2, 3],
                                          [2, 4, 6],
                                          [3, 6, 9],
                                          [3, 2, 1]]);
-matrix_multipleZeroesInMiddleSolved = np.array([[1, 0, 0],
-                                               [0, 1, 0],
+matrix_multipleZeroesInMiddleSolved = np.array([[1, 0, -1],
+                                               [0, 1, 2],
                                                [0, 0, 0],
                                                [0, 0, 0]]);
 
