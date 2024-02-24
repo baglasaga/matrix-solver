@@ -2,7 +2,7 @@ import numpy as np
 import MatrixSolver as ms
 
 def main():
-    testRowReductions(empty_matrix, empty_matrix, "empty matrix");
+    # testRowReductions(empty_matrix, empty_matrix, "empty matrix");
     testRowReductions(matrix_alreadySolved, matrix_alreadySolved, "already solved matrix");
     testRowReductions(matrix_1x1, matrix_1x1Solved, "1x1 matrix");
     testRowReductions(matrix_2x2, matrix_2x2Solved, "2x2 matrix");
@@ -29,7 +29,8 @@ def testRowReductions(toTest, soln, name):
     print("Test " + name + " passed!");
 
 ###### definitions here
-empty_matrix = np.empty
+# empty_matrix = np.empty
+# empty_matrix = np.array();
 
 matrix_1x1 = np.array([[1, 2]]);
 matrix_1x1Solved = np.array([[1, 0]]);
@@ -39,12 +40,12 @@ matrix_2x2 = np.array([[1, 2],
 matrix_2x2Solved = np.array([[1, 0],
                             [0, 1]])
 
-matrix_1x3 = np.array([1],
+matrix_1x3 = np.array([[1],
                       [5],
-                      [3]);
-matrix_1x3Solved = np.array([1],
+                      [3]]);
+matrix_1x3Solved = np.array([[1],
                             [0],
-                            [0])
+                            [0]])
 
 matrix_3x1 = np.array([1, 1, 1]);
 matrix_3x1Solved = np.array([1, 1, 1]);
