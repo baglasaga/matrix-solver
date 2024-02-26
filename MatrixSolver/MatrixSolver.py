@@ -6,15 +6,16 @@ def buildMatrix():
     print("Input number of rows of matrix, then number of columns.");
     numRows = int(input("Number of rows?"));
     numCols = int(input("Number of columns?"));
-    matrix = np.empty;
+    matrix = np.array([]);
     for r in range(numRows):
-        rows = np.empty;
+        rows = np.array([]);
         for c in range(numCols):
-            element = int(input());
-            # add element to col
-        # add col to row
-    # figure out how to add to a numpy matrix 
-    return;
+            element = int(input("input element"));
+            rows = np.append(rows, element);
+        matrix = np.append(matrix, rows);
+        print("Matrix built:");
+    printMatrix(matrix);
+    return matrix;
 
 # code from here made with reference to https://www.geeksforgeeks.org/converting-matrix-into-row-echelon-form-in-python/ 
 

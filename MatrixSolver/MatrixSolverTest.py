@@ -34,7 +34,7 @@ def testRowReductions(toTest, soln, name):
 # empty_matrix = np.array();
 
 matrix_allZeroes = np.array([[0, 0, 0],
-                             [0, 0, 0]
+                             [0, 0, 0],
                              [0, 0, 0]]);
 
 matrix_1x1 = np.array([[1, 2]]);
