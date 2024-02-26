@@ -3,6 +3,17 @@ import numpy as np
 
 # builds matrix to solve based on user input and returns it 
 def buildMatrix():
+    print("Input number of rows of matrix, then number of columns.");
+    numRows = int(input("Number of rows?"));
+    numCols = int(input("Number of columns?"));
+    matrix = np.empty;
+    for r in range(numRows):
+        rows = np.empty;
+        for c in range(numCols):
+            element = int(input());
+            # add element to col
+        # add col to row
+    # figure out how to add to a numpy matrix 
     return;
 
 # code from here made with reference to https://www.geeksforgeeks.org/converting-matrix-into-row-echelon-form-in-python/ 
@@ -33,7 +44,7 @@ def nonZeroRow(matrix, pivot, col):
     for row in range(pivot, numRows):
         if matrix[row, col] != 0:
             return row;
-    return None;
+    return None; # there are only zero rows 
 
 # swaps rows at row numbers row1 and row2 in matrix
 def swapRows(matrix, row1, row2):

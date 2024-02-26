@@ -3,6 +3,7 @@ import MatrixSolver as ms
 
 def main():
     # testRowReductions(empty_matrix, empty_matrix, "empty matrix");
+    testRowReductions(matrix_allZeroes, matrix_allZeroes, "zero matrix");
     testRowReductions(matrix_alreadySolved, matrix_alreadySolved, "already solved matrix");
     testRowReductions(matrix_1x1, matrix_1x1Solved, "1x1 matrix");
     testRowReductions(matrix_2x2, matrix_2x2Solved, "2x2 matrix");
@@ -31,6 +32,10 @@ def testRowReductions(toTest, soln, name):
 ###### definitions here
 # empty_matrix = np.empty
 # empty_matrix = np.array();
+
+matrix_allZeroes = np.array([[0, 0, 0],
+                             [0, 0, 0]
+                             [0, 0, 0]]);
 
 matrix_1x1 = np.array([[1, 2]]);
 matrix_1x1Solved = np.array([[1, 0]]);
