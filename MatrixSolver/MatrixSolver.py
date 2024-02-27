@@ -4,16 +4,17 @@ import numpy as np
 # builds matrix to solve based on user input and returns it 
 def buildMatrix():
     print("Input number of rows of matrix, then number of columns.");
-    numRows = int(input("Number of rows?"));
-    numCols = int(input("Number of columns?"));
-    matrix = np.array([]);
+    numRows = int(input("Number of rows?\n"));
+    numCols = int(input("Number of columns?\n"));
+    matrix = [];
     for r in range(numRows):
-        rows = np.array([]);
+        rows = []
         for c in range(numCols):
-            element = int(input("input element"));
-            rows = np.append(rows, element);
-        matrix = np.append(matrix, rows);
-        print("Matrix built:");
+            element = int(input("Input element at row " + str(r) + " and column " + str(c) + "\n"));
+            rows.append(element);
+        matrix.append(rows);
+    matrix = np.array(matrix);
+    print("Matrix built:");
     printMatrix(matrix);
     return matrix;
 
