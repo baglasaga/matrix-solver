@@ -6,14 +6,12 @@ def buildMatrix():
     print("Input number of rows of matrix, then number of columns.");
     numRows = int(input("Number of rows?"));
     numCols = int(input("Number of columns?"));
-    matrix = np.array([]);
+    matrix = np.zeros((numRows, numCols), dtype=float)
     for r in range(numRows):
-        rows = np.array([]);
         for c in range(numCols):
-            element = int(input("input element"));
-            rows = np.append(rows, element);
-        matrix = np.append(matrix, rows);
-        print("Matrix built:");
+            element = float(input(f"input element: row {r} col {c}"));
+            matrix[r, c] = element;
+    print(f"Matrix built: datatype is {matrix.dtype}");
     printMatrix(matrix);
     return matrix;
 
@@ -21,7 +19,6 @@ def buildMatrix():
 
 # uses Gaussian elimination method to row reduce entire matrix
 def rowReduce(matrix):
-    # matrix = matrix.astype(np.float64); TODO: work in progress work for fractions
     currentRow = 0;
     try:
         numCols = matrix.shape[1];
@@ -30,6 +27,7 @@ def rowReduce(matrix):
     for col in range(numCols): # loops through columns
         nonzero = nonZeroRow(matrix, currentRow, col);
         if nonzero != None:
+            print(f"Matrix dtype before operation: {matrix.dtype}")
             swapRows(matrix, currentRow, nonzero);
             setPivotToOne(matrix, currentRow, col);
             eliminateAboveBelow(matrix, currentRow, col);
@@ -58,7 +56,7 @@ def swapRows(matrix, row1, row2):
 # EFFECTS: divides every element in pivot row by the value of the element at matrix[row, pivot] 
 #          in order to set that element to 1
 def setPivotToOne(matrix, pivot, col):
-    matrix[pivot] //= matrix[pivot, col];
+    matrix[pivot] /= matrix[pivot, col];
 
 # PARAMS: matrix: array representing matrix to be solved
 #         pivot: integer representing row number of current pivot row 
