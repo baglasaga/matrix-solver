@@ -12,4 +12,3 @@ This project adapts code from https://www.geeksforgeeks.org/converting-matrix-in
 -   allowing the program to put the given matrix in RREF form, rather than REF
 -   works from console-based user input
 
-Currently, there is a known bug where the solver does not handle fractional values correctly (to be fixed)
